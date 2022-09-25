@@ -1,0 +1,27 @@
+#define PIN_LED 7
+#define Pin7
+unsigned int count, toggle;
+
+void setup() {
+  pinMode(7, OUTPUT);
+  Serial.begin(115200); // Initialize serial port
+  while (!Serial) {
+  ; // wait for serial port to connect.
+  }
+ 
+  count = toggle = 1;
+  digitalWrite(7, HIGH); // turn on LED.
+  delay(1000);
+}
+
+void loop() {
+  for (int a=0; a<=4; a++){
+      digitalWrite(7, HIGH);
+      delay(100);
+      digitalWrite(7, LOW);
+      delay(100);
+  }
+  while(1) {
+    digitalWrite(7, LOW);
+  }
+}
